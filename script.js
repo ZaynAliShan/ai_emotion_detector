@@ -1,11 +1,11 @@
 const video = document.getElementById("video");
 
-//promise all will return ture if all are ture otherwise false
+/promise all will return ture if all are ture otherwise false
 Promise.all([
-  faceapi.nets.tinyFaceDetector.loadFromUri('./models/tiny_face_detector_model-weights_manifest.json'),
-  faceapi.nets.faceLandmark68Net.loadFromUri('./models/face_landmark_68_model-weights_manifest.json'),
-  faceapi.nets.faceRecognitionNet.loadFromUri('./models/face_recognition_model-weights_manifest.json'),
-  faceapi.nets.faceExpressionNet.loadFromUri('./models/face_expression_model-weights_manifest.json')
+  faceapi.nets.tinyFaceDetector.loadFromUri('/models'), //makes detecting small and efficient
+  faceapi.nets.faceLandmark68Net.loadFromUri('/models'), //makes a net of dots aroung face that will describe face
+  faceapi.nets.faceRecognitionNet.loadFromUri('/models'), //makes box around face for recognition
+  faceapi.nets.faceExpressionNet.loadFromUri('/models'), //for emotion net of face
 ]).then(startVideo) //show video after loading all models and it's a success scenario
 
 function startVideo() {
