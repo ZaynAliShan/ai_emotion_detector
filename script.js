@@ -9,7 +9,7 @@ Promise.all([
 ]).then(startVideo) //show video after loading all models and it's a success scenario
 
 function startVideo() {
-  navigator.getUserMedia (
+  navigator.navigator.mediaDevices.getUserMedia (
     { video: {} },
     stream => video.srcObject = stream,
     err => console.error(err)
